@@ -9,9 +9,6 @@ from django.contrib.auth.decorators import login_required
 
 @csrf_exempt
 def login_view(request):
-    print(request.body)
-    print(request.headers)
-    print(request.COOKIES)
     username = request.POST['username']
     password = request.POST['password']
     user = authenticate(request, username=username, password=password)
